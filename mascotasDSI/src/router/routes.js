@@ -4,8 +4,9 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
-      { path: '/listado', component: () => import('pages/ListadoPage.vue') },
+      { path: '/listado', component: () => import('pages/ListadoPage.vue') }, //Ruta para catalogo
       { path: '/inicio-sesion', component: () => import('pages/InicioSesion.vue') }, //Ruta para pagina de inicio de sesion
+      { path: '/agregar', component: () => import('pages/AgregarPage.vue') }, //Ruta para agregar mascota
     ]
   },
 
