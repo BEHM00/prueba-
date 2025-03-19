@@ -7,14 +7,14 @@
 
         <q-toolbar-title>
           <q-avatar size="50px">
-            <img src="../assets/confirmado.png">
+            <img src="../assets/logo sin sombra.png">
           </q-avatar>
           <span class="q-ml-sm text-h5">Adoptame SV</span>
         </q-toolbar-title>
         <q-btn-group flat>
-          <q-btn flat label="Inicio"/>
+          <q-btn flat label="Inicio" to="/"/>
           <q-btn flat label="Quienes somos" />
-          <q-btn flat label="catalogo de adopcion" />
+          <q-btn flat label="catalogo de adopcion" to="/listado"/>
           <q-btn flat label="dar en adopcion" />
           <q-btn flat label="politicas" />
           <q-btn flat label="contactanos" />
@@ -36,7 +36,7 @@
 
     <!-- Logo -->
     <div class="col text-center q-mt-lg">
-      <img height="100px" src="../assets/confirmado.png">
+      <img height="100px" src="../assets/logo sin sombra.png">
     </div>
 
     <!-- Contactos -->
