@@ -1,6 +1,5 @@
 <template>
   <q-layout view="hHh lpR fFf">
-
     <q-header elevated class="header">
       <q-toolbar>
         <!-- <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" size="xl"/> -->
@@ -19,7 +18,7 @@
           <q-btn flat label="politicas" />
           <q-btn flat label="contactanos" />
         </q-btn-group>
-        <q-btn rounded unelevated color="black" label="Iniciar Sesión" />
+        <q-btn rounded unelevated color="black" label="Iniciar Sesión" to="/inicio-sesion" />
       </q-toolbar>
     </q-header>
 
@@ -59,8 +58,6 @@
   </q-toolbar>
 </q-footer>
 
-
-
   </q-layout>
 </template>
 
@@ -75,13 +72,12 @@
 </script>
 
 <style scoped>
-  .header{
-    background-color: #FCCA73;
-    color: #3C261B;
-  }
-  .footer{
-    background-color: #8C3223;
-    color: white;
-  }
-
+.header {
+  background-color: #fcca73;
+  color: #3c261b;
+}
+.footer {
+  background-color: #8c3223;
+  color: white;
+}
 </style>

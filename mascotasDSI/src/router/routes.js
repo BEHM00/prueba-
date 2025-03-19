@@ -4,7 +4,8 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
-      { path: '/listado', component: () => import('pages/ListadoPage.vue') }
+      { path: '/listado', component: () => import('pages/ListadoPage.vue') },
+      { path: '/inicio-sesion', component: () => import('pages/InicioSesion.vue') }, //Ruta para pagina de inicio de sesion
     ]
   },
 
@@ -12,8 +13,8 @@ const routes = [
   // but you can also remove it
   {
     path: '/:catchAll(.*)*',
-    component: () => import('pages/ErrorNotFound.vue')
-  }
+    component: () => import('pages/ErrorNotFound.vue'),
+  },
 ]
 
-export default routes
+export default routes;
