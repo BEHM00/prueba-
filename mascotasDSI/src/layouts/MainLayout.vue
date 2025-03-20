@@ -12,7 +12,7 @@
         </q-toolbar-title>
         <q-btn-group flat>
           <q-btn flat label="Inicio" to="/"/>
-          <q-btn flat label="Quienes somos" />
+          <q-btn flat label="Quienes somos" to="/quienessomos"/>
           <q-btn flat label="catalogo de adopcion" to="/listado"/>
           <q-btn flat label="dar en adopcion" to="/agregar"/>
           <q-btn flat label="politicas" />
