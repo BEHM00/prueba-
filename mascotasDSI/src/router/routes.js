@@ -1,7 +1,7 @@
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+    component: () => import('layouts/DynamicLayout.vue'), // Usa el layout dinámico
     children: [
       { path: '', component: () => import('pages/IndexPage.vue') },
       { path: 'listado', component: () => import('pages/ListadoPage.vue') },
@@ -15,18 +15,17 @@ const routes = [
     ],
   },
   {
-    path: '/inicio-sesion/crear-cuenta',
+    path: '/inicio-sesion/',
     component: () => import('layouts/InicioLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/CrearCuenta.vue') }
+      { path: 'crear-cuenta', component: () => import('pages/CrearCuenta.vue') }
     ]
   },
-  // Always leave this as last one,
-  // but you can also remove it
+  // Ruta para páginas no encontradas
   {
     path: '/:catchAll(.*)*',
     component: () => import('pages/ErrorNotFound.vue'),
   },
-]
+];
 
-export default routes
+export default routes;
