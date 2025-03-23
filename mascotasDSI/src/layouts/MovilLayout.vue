@@ -15,9 +15,82 @@
         </q-toolbar>
       </q-header>
   
-      <q-drawer v-model="leftDrawerOpen" side="left" overlay behavior="mobile" bordered>
+      <q-drawer v-model="leftDrawerOpen" side="left" overlay behavior="mobile" bordered class="bg-secondary">
         <!-- drawer content -->
-         <h2>hola</h2>
+         <div class="row" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 40px;  padding: 0;">
+          <q-avatar size="225px">
+            <img src="../assets/logo sin sombra.png"> <!-- Ruta de la imagen de perfil -->
+          </q-avatar>
+         </div>
+         <!-- apartado de perfil  -->
+         <div class="q-mb-lg text-dark">
+          <p class="q-mt-sm q-mb-mb q-ml-lg ">PERFIL</p>
+
+          <router-link to="/miperfil" style="text-decoration: none; color: inherit;">
+          <div class="flex q-ml-lg q-mb-sm">
+          <q-avatar size="25px">
+            <img src="../assets/icons8-persona-de-sexo-masculino-32.png"> <!-- Ruta de la imagen de perfil -->
+          </q-avatar>
+          <p class="q-ml-sm">Sobre Mi</p>
+        </div>
+      </router-link>
+        <router-link to="/miperfil" style="text-decoration: none; color: inherit;">
+        <div class="flex q-ml-lg q-mb-sm">
+          <q-avatar size="25px">
+            <img src="../assets/icons8-publicación-96.png"> <!-- Ruta de la imagen de perfil -->
+          </q-avatar>
+          <p class="q-ml-sm">Tus Publicaciones</p>
+        </div>
+      </router-link>
+        <router-link to="/miperfil" style="text-decoration: none; color: inherit;">
+        <div class="flex q-ml-lg">
+          <q-avatar size="25px">
+            <img src="../assets/icons8-formulario-de-aplicación-32.png"> <!-- Ruta de la imagen de perfil -->
+          </q-avatar>
+          <p class="q-ml-sm">Mis Solicitudes</p>
+         </div>
+        </router-link>
+        </div>
+
+          <!-- apartado de nosotros  -->
+          <div class="q-mb-xl text-dark">
+          <p class="q-mt-sm q-mb-mb q-ml-lg">NOSOTROS</p>
+          <router-link to="/quienessomos" style="text-decoration: none; color: inherit;">
+            <div class="flex q-ml-lg q-mb-sm" style="cursor: pointer;">
+              <q-avatar size="25px">
+                <img src="../assets/icons8-llamada-de-conferencia-32.png"> <!-- Ruta de la imagen de perfil -->
+              </q-avatar>
+              <p class="q-ml-sm">Quienes Somos</p>
+            </div>
+          </router-link>
+
+          <router-link to="/quienessomos" style="text-decoration: none; color: inherit;">
+        <div class="flex q-ml-lg q-mb-sm">
+          <q-avatar size="25px">
+            <img src="../assets/icons8-teléfono-48.png"> <!-- Ruta de la imagen de perfil -->
+          </q-avatar>
+          <p class="q-ml-sm">Contactanos</p>
+        </div>
+          </router-link>
+        <router-link to="/quienessomos" style="text-decoration: none; color: inherit;">
+        <div class="flex q-ml-lg">
+          <q-avatar size="25px">
+            <img src="../assets/icons8-flag-48.png"> <!-- Ruta de la imagen de perfil -->
+          </q-avatar>
+          <p class="q-ml-sm">Politicas</p>
+         </div>
+        </router-link>
+
+         </div>
+         
+         <div class="flex q-ml-md text-dark" style="margin-top: 30%;">
+          <q-avatar size="25px">
+            <img src="../assets/icons8-burbuja-de-diálogo-con-puntos-32.png"> <!-- Ruta de la imagen de perfil -->
+          </q-avatar>
+          <p class="q-ml-sm">Haz una sugerencia o comentario</p>
+         </div>
+
+
       </q-drawer>
   
       <q-page-container>

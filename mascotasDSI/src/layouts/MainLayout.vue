@@ -8,15 +8,15 @@
           <q-avatar size="50px">
             <img src="../assets/logo sin sombra.png">
           </q-avatar>
-          <span class="q-ml-sm text-h5">Adoptame SV</span>
+          <span class="q-ml-sm text-h5 gt-md">Adoptame SV</span>
         </q-toolbar-title>
         <q-btn-group flat>
           <q-btn flat label="Inicio" to="/"/>
           <q-btn flat label="Quienes somos" to="/quienessomos"/>
           <q-btn flat label="catalogo de adopcion" to="/listado"/>
           <q-btn flat label="dar en adopcion" to="/agregar"/>
-          <q-btn flat label="politicas" />
-          <q-btn flat label="contactanos" />
+          <q-btn class="gt-sm" flat label="politicas" />
+          <q-btn class="gt-sm" flat label="contactanos" />
         </q-btn-group>
         <q-btn rounded unelevated color="black" label="Iniciar Sesión" to="/inicio-sesion" />
       </q-toolbar>
