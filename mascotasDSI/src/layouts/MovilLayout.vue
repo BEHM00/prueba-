@@ -1,35 +1,52 @@
 <template>
     <q-layout view="hHh lpR lFf">
   
-      <q-header reveal elevated class="bg-primary text-white">
+      <q-header reveal elevated class="bg-primary" style=" height: 50px; max-height: 100px;">
         <q-toolbar>
           <q-btn dense flat round icon="menu" color="dark" @click="toggleLeftDrawer" />
+
+          <q-space/>
+
+          <router-link to="/miperfil" style="text-decoration: none; color: inherit;">
+          <q-avatar>
+            <img src="../assets/logo sin sombra.png"> <!-- Ruta de la imagen de perfil -->
+          </q-avatar>
+        </router-link>
         </q-toolbar>
       </q-header>
   
       <q-drawer v-model="leftDrawerOpen" side="left" overlay behavior="mobile" bordered>
         <!-- drawer content -->
+         <h2>hola</h2>
       </q-drawer>
   
       <q-page-container>
         <router-view />
       </q-page-container>
   
-      <q-footer bordered class="bg-primary text-white">
-  <q-toolbar class="min-height: 50px;"> 
-    <div class="row" style="width: 100%;"> 
-      <div class="col-6 flex items-center justify-center" style="background-color: aqua;">
-        <q-avatar>
+      <q-footer bordered class="bg-primary" style="max-height:70px;">
+  <q-toolbar>
+    <div class="row text-dark" style="width: 100%;">
+      <!-- Primera columna -->
+      <router-link to="/" style="text-decoration: none; color: inherit; flex: 1;">
+      <div class="col-6" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0; padding: 0;">
+        <q-avatar size="25px" class="q-mt-sm">
           <img src="../assets/icons8-huella-de-gato-ios-17-filled-96.png">
         </q-avatar>
-        <p>INICIO</p> 
+        <p style="margin-top: 7px;">INICIO</p>
       </div>
-      <div class="col-6 flex items-center justify-center" style="background-color: lightgreen;">
-        <q-avatar>
+      </router-link>
+
+      <!-- Segunda columna -->
+      <router-link to="/miperfil" style="text-decoration: none; color: inherit; flex: 1;">
+      <div class="col-6" style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 0; padding: 0;">
+        <q-avatar size="30px" class="q-mt-sm">
           <img src="../assets/icons8-publicación-windows-11-outline-96.png">
         </q-avatar>
-        <p>MIS PUBLICACIONES</p> 
+        <p style="margin-top: 5px;">MIS PUBLICACIONES</p>
       </div>
+      </router-link>
+
     </div>
   </q-toolbar>
 </q-footer>
@@ -41,7 +58,7 @@
   
   
   <script>
-  import { ref } from 'vue'
+import { ref } from 'vue'
   
   export default {
     setup () {
