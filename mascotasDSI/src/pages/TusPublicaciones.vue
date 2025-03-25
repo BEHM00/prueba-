@@ -1,6 +1,6 @@
 <template>
   <q-page>
-    <div class="text-h4">Sobre mi</div>
+    <div class="text-h4">Mis publicaciones</div>
 
   </q-page>
 </template>
