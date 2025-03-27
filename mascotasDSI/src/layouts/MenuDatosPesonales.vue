@@ -1,24 +1,30 @@
 <template>
   <q-layout view="hHh lpR fFf">
     <!-- Menú lateral en pantallas grandes -->
-    <q-drawer v-if="!isMobile" show-if-above side="left" elevated class="menu-container">
+    <q-drawer show-if-above side="left" elevated class="menu-container" style="border-right: 3px solid #8d3527;">
       <div class="menu-profile">
         <!-- Sección de Perfil -->
-        <div class="account-section">
-          <q-avatar size="100px" class="bg-white text-primary">
-            <q-icon name="person" size="50px" />
-          </q-avatar>
-          <q-btn fab dense size="sm" color="brown" icon="edit" class="edit-avatar-btn" />
-          <div class="text-h6 text-dark">Cuenta</div>
+        <div class="account-section" style="margin-bottom: 40px; margin-top: 10px;">
+          <div class="text-h6 text-dark" style="text-align: left;">Cuenta</div>
           <div class="text-subtitle2 text-grey">Edita tu nombre, avatar, etc.</div>
+          <q-card class="my-card" flat style="width: 100%; margin-top: 25px;">
+            <div class="flex flex-center">
+              <!-- Imagen con tamaño dinámico -->
+              <img :src="imgpredeterminado" :style="sizeimg" />
+            </div>
+            <q-card-actions style="margin-top: 10px;" align="center">
+              <q-btn size="10px" round color="positive" icon="add" />
+              <q-btn size="10px" round color="negative" icon="delete" />
+            </q-card-actions>
+          </q-card>
         </div>
 
         <!-- Botones de navegación -->
-        <div class="menu-buttons">
-          <q-btn color="brown" unelevated rounded class="full-width q-mb-md" icon="person" label="Sobre mí" to="/miperfil/sobremi" />
-          <q-btn color="brown" unelevated rounded class="full-width q-mb-md" icon="image" label="Tus publicaciones" to="/miperfil/tuspublicaciones" />
-          <q-btn color="brown" unelevated rounded class="full-width q-mb-md" icon="description" label="Mis solicitudes" to="/miperfil/tussolicitudes" />
-          <q-btn color="brown" unelevated rounded class="full-width" icon="logout" label="Cerrar Sesión" />
+        <div class="flex flex-center">
+          <q-btn color="accent" unelevated rounded :style="customizebtn" class="q-mb-md" icon="person" label="Sobre mí" to="/miperfil/sobremi" />
+          <q-btn color="accent" unelevated rounded :style="customizebtn" class="q-mb-md" icon="image" label="Tus publicaciones" to="/miperfil/tuspublicaciones" />
+          <q-btn color="accent" unelevated rounded :style="customizebtn" class="q-mb-md" icon="description" label="Mis solicitudes" to="/miperfil/tussolicitudes" />
+          <q-btn color="accent" unelevated rounded :style="customizebtn" icon="logout" label="Cerrar Sesión" />
         </div>
       </div>
     </q-drawer>
@@ -29,22 +35,34 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { computed } from "vue";
 import { useQuasar } from "quasar";
-
+import imgpredeterminado from 'src/assets/imgpredeterminada.png';
 const $q = useQuasar();
-const isMobile = ref(false);
 
-onMounted(() => {
-  isMobile.value = $q.screen.lt.md; // Detecta si la pantalla es menor a 'md' (móviles y tabletas)
+const customizebtn = computed(() => {
+  if ($q.screen.lt.lg) {
+    return { margin: "30px 0px 5px 0px", width: "75%" };
+  }
+  return { margin: "40px 0px 35px 10px", width: "70%" };
+});
+
+// Cambiar tamaño de imagen según la resolución
+const sizeimg = computed(() => {
+  if ($q.screen.lt.lg) {
+    return { width: "100px", height: "90px", objectFit: "contain" };  // Tamaño pequeño para pantallas pequeñas
+  }
+  return { maxWidth: "150px", maxHeight: "150px", objectFit: "contain" };  // Tamaño grande para pantallas grandes
 });
 </script>
 
+
+
 <style scoped>
 .menu-container {
-  background-color: #fef4ea;
+  background-color:#fef4ea;
   width: 250px;
-  height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,19 +83,6 @@ onMounted(() => {
   margin-bottom: 20px;
 }
 
-.edit-avatar-btn {
-  position: absolute;
-  bottom: 10px;
-  right: 120px;
-}
-
-.menu-buttons {
-  width: 80%;
-}
-
-.full-width {
-  width: 100%;
-}
 
 /* Responsive */
 @media (max-width: 1024px) {

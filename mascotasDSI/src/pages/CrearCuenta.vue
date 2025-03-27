@@ -87,10 +87,10 @@
         </q-carousel-slide>
 
         <!-- Slide 2 -->
-        <q-carousel-slide name="slide2" :style="paddingslide2">
+        <q-carousel-slide name="slide2" class="full-height" style="height: 100vh; overflow: hidden;">
           <div class="q-col-gutter-md">
 
-            <div class="column q-mb-md">
+            <div class="column q-mb-md"  :style="paddingslide2" >
               <div class="text-accent text-weight-bold text-md text-sm">Ingrese su correo electrónico:</div>
               <q-input color="accent" rounded outlined v-model="correoelectronico">
                 <template v-slot:append>
