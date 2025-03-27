@@ -18,6 +18,10 @@ const routes = [
       { path: 'sugerencias', component: () => import('pages/MiSugerencias.vue') },
       { path: 'inicio-sesion', component: () => import('pages/InicioSesion.vue') },
       { path: 'inicio-sesion/crear-cuenta', component: () => import('pages/CrearCuenta.vue') },
+      {
+        path: '/contactanos',
+        component: () => import('pages/ContactanosPage.vue'),
+      },
     ],
   },
   // Ruta para páginas no encontradas
@@ -25,6 +29,6 @@ const routes = [
     path: '/:catchAll(.*)*',
     component: () => import('pages/ErrorNotFound.vue'),
   },
-];
+]
 
-export default routes;
+export default routes

@@ -16,7 +16,8 @@
           <q-btn flat label="catalogo de adopcion" to="/listado"/>
           <q-btn flat label="dar en adopcion" to="/agregar"/>
           <q-btn class="gt-sm" flat label="politicas" />
-          <q-btn class="gt-sm" flat label="contactanos" />
+          <q-btn class="gt-sm" flat label="contactanos" to="/contactanos" />
+
         </q-btn-group>
         <q-btn rounded unelevated color="black" label="Iniciar Sesión" to="/inicio-sesion" />
       </q-toolbar>
