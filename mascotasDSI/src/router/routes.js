@@ -22,6 +22,10 @@ const routes = [
         path: '/contactanos',
         component: () => import('pages/ContactanosPage.vue'),
       },
+      {
+        path: '/PoliticasS',
+        component: () => import('pages/PoliticasS.vue'),
+      },
     ],
   },
   // Ruta para páginas no encontradas

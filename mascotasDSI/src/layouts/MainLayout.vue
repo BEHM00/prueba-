@@ -15,7 +15,7 @@
           <q-btn flat label="Quienes somos" to="/quienessomos"/>
           <q-btn flat label="catalogo de adopcion" to="/listado"/>
           <q-btn flat label="dar en adopcion" to="/agregar"/>
-          <q-btn class="gt-sm" flat label="politicas" />
+          <q-btn class="gt-sm" flat label="politicas" to="/PoliticasS"/>
           <q-btn class="gt-sm" flat label="contactanos" to="/contactanos" />
 
         </q-btn-group>
