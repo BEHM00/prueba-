@@ -82,31 +82,32 @@
 
                       <div style="display: flex; justify-content: space-between; margin-top: 8px;">
                         <q-btn flat icon="report_problem" style="color: #8C3223;" @click="reportarDialog">
-                          <q-tooltip class="bg-negative">Reportar</q-tooltip>
+                          <q-tooltip v-if="$q.screen.gt.sm" class="bg-negative">Reportar</q-tooltip>
                         </q-btn>
                         <q-btn flat icon="arrow_forward" style="color: #50A163;" to="detalle/:IDMASCOTA">
-                          <q-tooltip class="bg-positive">Ver Mas</q-tooltip>
+                          <q-tooltip v-if="$q.screen.gt.sm" class="bg-positive">Ver Mas</q-tooltip>
                         </q-btn>
-                        <!-- dialog para reportar -->
-                        <q-dialog v-model="reportDialogVisible">
-                          <q-card style="min-width: 350px;" class="bg-primary">
-                            <q-card-section>
-                              <div class="text-h6 text-negative">Reportar Anuncio</div>
-                              <q-input v-model="reportReason" label="Por que quiere reportar" type="text" :dense="true"
-                                autofocus counter maxlength="200" color="white" />
-                            </q-card-section>
-
-                            <q-card-actions>
-                              <q-btn flat label="Cancelar" color="black" @click="reportDialogVisible = false" />
-                              <q-btn flat label="Reportar" color="negative" @click="reportarAnuncio" />
-                            </q-card-actions>
-                          </q-card>
-                        </q-dialog>
                       </div>
                     </div>
                   </div>
+                  <!-- dialog para reportar -->
+                  <q-dialog v-model="reportDialogVisible">
+                    <q-card style="min-width: 350px;" class="bg-primary">
+                      <q-card-section>
+                        <div class="text-h6 text-negative">Reportar Anuncio</div>
+                        <q-input v-model="reportReason" label="Por que quiere reportar" type="text" :dense="true"
+                          autofocus counter maxlength="200" color="white" />
+                      </q-card-section>
+
+                      <q-card-actions>
+                        <q-btn flat label="Cancelar" color="black" @click="reportDialogVisible = false" />
+                        <q-btn flat label="Reportar" color="negative" @click="reportarAnuncio" />
+                      </q-card-actions>
+                    </q-card>
+                  </q-dialog>
                 </div>
               </q-tab-panel>
+
 
               <!-- Cuadrícula de anuncios para "gatos" -->
               <q-tab-panel name="gatos">
@@ -141,29 +142,29 @@
 
                       <div style="display: flex; justify-content: space-between; margin-top: 8px;">
                         <q-btn flat icon="report_problem" style="color: #8C3223;" @click="reportarDialog">
-                          <q-tooltip class="bg-negative">Reportar</q-tooltip>
+                          <q-tooltip v-if="$q.screen.gt.sm" class="bg-negative">Reportar</q-tooltip>
                         </q-btn>
                         <q-btn flat icon="arrow_forward" style="color: #50A163;" to="detalle/:IDMASCOTA">
-                          <q-tooltip class="bg-positive">Ver Mas</q-tooltip>
+                          <q-tooltip v-if="$q.screen.gt.sm" class="bg-positive">Ver Mas</q-tooltip>
                         </q-btn>
-                        <!-- dialog para reportar -->
-                        <q-dialog v-model="reportDialogVisible">
-                          <q-card style="min-width: 350px;" class="bg-primary">
-                            <q-card-section>
-                              <div class="text-h6 text-negative">Reportar Anuncio</div>
-                              <q-input v-model="reportReason" label="Por que quiere reportar" type="text" :dense="true"
-                                autofocus counter maxlength="200" color="white" />
-                            </q-card-section>
-
-                            <q-card-actions>
-                              <q-btn flat label="Cancelar" color="black" @click="reportDialogVisible = false" />
-                              <q-btn flat label="Reportar" color="negative" @click="reportarAnuncio" />
-                            </q-card-actions>
-                          </q-card>
-                        </q-dialog>
                       </div>
                     </div>
                   </div>
+                  <!-- dialog para reportar -->
+                  <q-dialog v-model="reportDialogVisible">
+                    <q-card style="min-width: 350px;" class="bg-primary">
+                      <q-card-section>
+                        <div class="text-h6 text-negative">Reportar Anuncio</div>
+                        <q-input v-model="reportReason" label="Por que quiere reportar" type="text" :dense="true"
+                          autofocus counter maxlength="200" color="white" />
+                      </q-card-section>
+
+                      <q-card-actions>
+                        <q-btn flat label="Cancelar" color="black" @click="reportDialogVisible = false" />
+                        <q-btn flat label="Reportar" color="negative" @click="reportarAnuncio" />
+                      </q-card-actions>
+                    </q-card>
+                  </q-dialog>
                 </div>
               </q-tab-panel>
 
@@ -200,29 +201,29 @@
 
                       <div style="display: flex; justify-content: space-between; margin-top: 8px;">
                         <q-btn flat icon="report_problem" style="color: #8C3223;" @click="reportarDialog">
-                          <q-tooltip class="bg-negative">Reportar</q-tooltip>
+                          <q-tooltip v-if="$q.screen.gt.sm" class="bg-negative">Reportar</q-tooltip>
                         </q-btn>
                         <q-btn flat icon="arrow_forward" style="color: #50A163;" to="detalle/:IDMASCOTA">
-                          <q-tooltip class="bg-positive">Ver Mas</q-tooltip>
+                          <q-tooltip v-if="$q.screen.gt.sm" class="bg-positive">Ver Mas</q-tooltip>
                         </q-btn>
-                        <!-- dialog para reportar -->
-                        <q-dialog v-model="reportDialogVisible">
-                          <q-card style="min-width: 350px;" class="bg-primary">
-                            <q-card-section>
-                              <div class="text-h6 text-negative">Reportar Anuncio</div>
-                              <q-input v-model="reportReason" label="Por que quiere reportar" type="text" :dense="true"
-                                autofocus counter maxlength="200" color="white" />
-                            </q-card-section>
-
-                            <q-card-actions>
-                              <q-btn flat label="Cancelar" color="black" @click="reportDialogVisible = false" />
-                              <q-btn flat label="Reportar" color="negative" @click="reportarAnuncio" />
-                            </q-card-actions>
-                          </q-card>
-                        </q-dialog>
                       </div>
                     </div>
                   </div>
+                  <!-- dialog para reportar -->
+                  <q-dialog v-model="reportDialogVisible">
+                    <q-card style="min-width: 350px;" class="bg-primary">
+                      <q-card-section>
+                        <div class="text-h6 text-negative">Reportar Anuncio</div>
+                        <q-input v-model="reportReason" label="Por que quiere reportar" type="text" :dense="true"
+                          autofocus counter maxlength="200" color="white" />
+                      </q-card-section>
+
+                      <q-card-actions>
+                        <q-btn flat label="Cancelar" color="black" @click="reportDialogVisible = false" />
+                        <q-btn flat label="Reportar" color="negative" @click="reportarAnuncio" />
+                      </q-card-actions>
+                    </q-card>
+                  </q-dialog>
                 </div>
               </q-tab-panel>
 
@@ -236,8 +237,8 @@
         <q-pagination v-model="current" :max="5" />
       </div>
     </div>
-<!-- Botón flotante de feedback -->
-<FloatingFeedbackBtn />
+    <!-- Botón flotante de feedback -->
+    <FloatingFeedbackBtn />
   </q-page>
 </template>
 
