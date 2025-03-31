@@ -16,7 +16,7 @@
           <q-btn class="text-weight-light" flat label="Mascotas" to="/listado" />
           <q-btn class="text-weight-light" flat label="Dar en adopcion" to="/agregar" />
           <q-btn class="text-weight-light" flat label="¿Como funciona?" to="/tutorial" />
-          <q-btn class="gt-sm text-weight-light" flat label="Politicas" to="/PoliticasS" />
+          <q-btn class="gt-sm text-weight-light" flat label="Politicas" to="/politicas" />
           <q-btn class="gt-sm text-weight-light" flat label="Contactanos" to="/contactanos" />
         </q-btn-group>
         <q-btn rounded unelevated color="black" label="Iniciar Sesión" to="/inicio-sesion" />

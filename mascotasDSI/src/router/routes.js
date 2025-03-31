@@ -23,7 +23,7 @@ const routes = [
         component: () => import('pages/ContactanosPage.vue'),
       },
       {
-        path: '/PoliticasS',
+        path: '/politicas',
         component: () => import('pages/PoliticasS.vue'),
       },
     ],

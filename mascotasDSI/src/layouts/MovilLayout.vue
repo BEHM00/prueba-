@@ -77,7 +77,7 @@
             <p class="q-ml-sm">¿Como Funciona?</p>
           </div>
         </router-link>
-        <router-link to="/quienessomos" style="text-decoration: none; color: inherit;">
+        <router-link to="/politicas" style="text-decoration: none; color: inherit;">
           <div class="flex q-ml-lg">
             <q-avatar size="25px">
               <img src="../assets/icons8-flag-48.png">  

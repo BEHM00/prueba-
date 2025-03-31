@@ -7,12 +7,13 @@
         <div class="col-xs-12 bg-blue" style="width: 100%;">
 
           <!-- boton de regreso -->
-          <q-btn dense flat round icon="arrow_back" color="dark" to="/listado" class="lt-md"
-            style="position: absolute; top: 16px; left: 16px; z-index: 1;" />
+          <q-btn dense round icon="arrow_back" color="dark" to="/listado"
+            style="position: absolute; top: 16px; left: 16px; z-index: 1000;" />
 
           <!-- carrusel -->
-          <q-carousel style="    z-index: 1000;" v-model="currentSlide" navigation="" transition-prev="jump-right" transition-next="jump-left"
-            swipeable animated control-color="dark" infinite arrows height="270px" class="carousel-responsive-web">
+          <q-carousel style="z-index: 10;" v-model="currentSlide" navigation="" transition-prev="jump-right"
+            transition-next="jump-left" swipeable animated control-color="dark" infinite arrows height="270px"
+            class="carousel-responsive-web">
 
             <q-carousel-slide v-for="(imagen, index) in imagenesMascota" :key="index" :name="'slide' + index"
               class="column no-wrap flex-center no-padding">
@@ -30,6 +31,8 @@
           </p>
           <div style="margin-left: auto;" class="tipo-responsive-web">
             <p class="text-weight-medium q-my-none text-capitalize">{{ mascota.tipo }}</p>
+            <p class="text-weight-medium q-my-none text-capitalize responsive-origen">{{ mascota.origen }}</p>
+
           </div>
         </div>
 
@@ -114,7 +117,10 @@
 
         <!-- boton agregar -->
         <div class="q-mx-auto q-mb-lg flex boton-web col-xs-12" style="width: 70%; margin-top: 10px;">
-          <q-btn color="primary" text-color="dark" icon="favorite" label="Solicitar Adoptar" style="width: 100%;" />
+          <q-btn :color="mascota.origen === 'rescatado' ? 'green' : 'primary'"
+            :text-color="mascota.origen === 'rescatado' ? 'white' : 'dark'"
+            :label="mascota.origen === 'rescatado' ? 'Contactar (WhatsApp)' : 'Solicitar Adoptar'"
+            :icon="mascota.origen === 'rescatado' ? 'chat' : 'favorite'" style="width: 100%;" />
         </div>
 
       </div>
@@ -132,6 +138,7 @@ import MapaUbicacion from 'components/MapaUbicacion.vue'
 const mascota = ref({
   nombre: 'Firulais',
   tipo: 'perro',
+  origen: 'domestico',
   detalles: {
     edad: '3 años',
     genero: 'Macho',
@@ -229,6 +236,11 @@ const currentSlide = ref('slide0')
     top: 30px;
     left: 20px;
     width: 30%;
+    display: flex;
+  }
+
+  .responsive-origen {
+    margin-left: 5px;
   }
 }
 
@@ -368,4 +380,4 @@ const currentSlide = ref('slide0')
     margin: 10px;
   }
 }
-</style>
+</style> 
