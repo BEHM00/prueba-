@@ -11,7 +11,7 @@
       
       <h3>Principios Fundamentales</h3>
       <ul class="principios">
-        <li v-for="(principio, index) in principios" :key="principio" v-animate-stagger="index">
+        <li v-for="(principio, index) in principios" :key="'principio-'+index" v-animate-stagger="index">
           <i class="fas fa-paw"></i> {{ principio }}
         </li>
       </ul>
@@ -20,7 +20,7 @@
     <section class="policy-section" v-animate-slide-up>
       <h2>2. Requisitos para Adoptar</h2>
       <ul class="requisitos">
-        <li v-for="(requisito, index) in requisitos" :key="index" v-animate-stagger="index">
+        <li v-for="(requisito, index) in requisitos" :key="'requisito-'+index" v-animate-stagger="index">
           <i class="fas fa-check-circle"></i> {{ requisito }}
         </li>
       </ul>
@@ -30,7 +30,7 @@
       <h2>3. Política de Reubicación</h2>
       <p>Para dueños que necesitan reubicar a sus mascotas:</p>
       <div class="reubicacion">
-        <div class="flip-card" v-for="(item, index) in politicaReubicacion" :key="item.titulo" v-animate-stagger="index">
+        <div class="flip-card" v-for="(item, index) in politicaReubicacion" :key="'reubicacion-'+index" v-animate-stagger="index">
           <div class="flip-card-inner">
             <div class="flip-card-front">
               <div class="card-content">
@@ -52,17 +52,25 @@
     <section class="policy-section" v-animate-slide-up>
       <h2>4. Compromisos del Adoptante</h2>
       <ul class="compromisos">
-        <li v-for="(compromiso, index) in compromisos" :key="index" v-animate-stagger="index">
+        <li v-for="(compromiso, index) in compromisos" :key="'compromiso-'+index" v-animate-stagger="index">
           <i class="fas fa-heart"></i> {{ compromiso }}
         </li>
       </ul>
     </section>
+
+    <!-- Botón flotante de feedback -->
+    <FloatingFeedbackBtn />
   </div>
 </template>
 
 <script>
+import FloatingFeedbackBtn from 'src/components/FloatingFeedbackBtn.vue';
+
 export default {
   name: 'PoliticasPage',
+  components: {
+    FloatingFeedbackBtn
+  },
   data() {
     return {
       appName: 'Adóptame SV',
@@ -142,7 +150,6 @@ export default {
 </script>
 
 <style scoped>
-/* Estilos base */
 .politicas-container {
   width: 100%;
   max-width: 1200px;
@@ -152,6 +159,7 @@ export default {
   color: #0f0f0f;
   line-height: 1.6;
   box-sizing: border-box;
+  position: relative;
 }
 
 .policy-header {
@@ -242,7 +250,6 @@ export default {
   margin: 1rem 0 0.5rem 0;
 }
 
-/* Listas */
 .principios, .requisitos, .compromisos {
   list-style: none;
   padding-left: 0;
@@ -263,7 +270,6 @@ export default {
   transition: all 0.3s ease;
 }
 
-/* Efectos hover para listas */
 .principios li:hover, .requisitos li:hover, .compromisos li:hover {
   transform: translateX(5px);
   cursor: default;
@@ -284,7 +290,6 @@ export default {
   transform: scale(1.2);
 }
 
-/* Tarjetas de reubicación con efecto flip */
 .reubicacion {
   display: grid;
   gap: 1.5rem;
@@ -374,7 +379,6 @@ export default {
   z-index: 2;
 }
 
-/* Media Queries para responsividad */
 @media (max-width: 992px) {
   .politicas-container {
     padding: 2rem;

@@ -76,6 +76,7 @@
       </q-card-section>
     </q-card>
   </q-page>
+  <FloatingFeedbackBtn />
 </template>
 
 <script setup>
@@ -83,6 +84,7 @@ import { ref, reactive, onMounted } from 'vue';
 import { useQuasar } from 'quasar';
 import lottie from 'lottie-web';
 import animationData from '../assets/Animation - 1742937049224.json';
+import FloatingFeedbackBtn from 'src/components/FloatingFeedbackBtn.vue'; 
 
 // Declaración de la variable animationContainer solo una vez
 const animationContainer = ref(null);

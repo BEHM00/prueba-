@@ -236,6 +236,8 @@
         <q-pagination v-model="current" :max="5" />
       </div>
     </div>
+<!-- Botón flotante de feedback -->
+<FloatingFeedbackBtn />
   </q-page>
 </template>
 
@@ -243,6 +245,7 @@
 <script setup>
 import { ref } from 'vue'
 import { useQuasar } from 'quasar'
+import FloatingFeedbackBtn from 'src/components/FloatingFeedbackBtn.vue'
 
 const $q = useQuasar()
 const reportDialogVisible = ref(false)

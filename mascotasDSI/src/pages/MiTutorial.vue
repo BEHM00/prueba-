@@ -65,12 +65,20 @@
         </div>
       </div>
     </div>
+
+    <!-- Botón flotante de feedback -->
+    <FloatingFeedbackBtn />
   </div>
 </template>
 
 <script>
+import FloatingFeedbackBtn from 'src/components/FloatingFeedbackBtn.vue';
+
 export default {
-  name: 'NewPage'
+  name: 'NewPage',
+  components: {
+    FloatingFeedbackBtn
+  }
 }
 </script>
 

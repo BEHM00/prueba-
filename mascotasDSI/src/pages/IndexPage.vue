@@ -37,9 +37,13 @@
       class="row"
     >
     contenido aqui xd
+
+    <!-- Botón flotante de feedback -->
+    <FloatingFeedbackBtn />
   </q-page>
 </template>
 
 <script setup>
+import FloatingFeedbackBtn from 'src/components/FloatingFeedbackBtn.vue';
 //
 </script>

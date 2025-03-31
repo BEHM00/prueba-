@@ -131,12 +131,15 @@
       </div>
     </div>
   </q-page>
+   <!-- Botón flotante de feedback -->
+   <FloatingFeedbackBtn />
 </template>
 
 <script setup>
 import { ref, watch, onMounted, nextTick } from 'vue'
 import { L } from 'src/boot/leaflet'  // Asegúrate de importar 'L' correctamente
 import { useQuasar } from 'quasar'
+import FloatingFeedbackBtn from 'src/components/FloatingFeedbackBtn.vue'
 
 const $q = useQuasar()
 
